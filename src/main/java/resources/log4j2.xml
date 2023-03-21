@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Cpnfiguration status="WARN">
+    <Properties>
+        <Property name="base">./target</Property>
+    </Properties>
+    <Appenders>
+        <Appender>
+            <RollingFile file="File" fileName="${base}/google.log" filePattern="${base}/google-%d{yyyy-MM-dd}.log"/>
+            <PatternLayout filePattern="%d{hh-mm-ss.SSSS} [%t] %d-5LEVEL %d-LOGGER[36] -%msg%n"/>
+        </Appender>
+    </Appenders>
+    <Loggers>
+        <Logger>
+            <Logger name="tests.GoogleTest" level="trace" additivity="false"/>
+            <Appender Ref="File"/>
+        </Logger>
+    </Loggers>
+    <Root>
+        <Root level="trace"/>
+    <Appender Ref="File"/>
+    </Root>
+</Cpnfiguration>
